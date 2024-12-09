@@ -11,9 +11,11 @@ def is_safe(report, dampener=False):
         diff = next - current if increasing else current - next
         if diff < 1 or diff > 3:
             if dampener:
-                return is_safe(drop(index, report)) or \
-                    is_safe(drop(index - 1, report)) or \
-                    is_safe(drop(index + 1, report))
+                return (
+                    is_safe(drop(index, report))
+                    or is_safe(drop(index - 1, report))
+                    or is_safe(drop(index + 1, report))
+                )
             else:
                 return False
         else:

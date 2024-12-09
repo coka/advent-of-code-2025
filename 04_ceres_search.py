@@ -33,13 +33,13 @@ def match(x, y, direction, distance, char):
 xs = []
 for y, line in enumerate(input):
     for x, char in enumerate(line):
-        if char == 'X':
-            xs += [m for m in [match(x, y, d, 1, 'M') for d in Direction] if m]
+        if char == "X":
+            xs += [m for m in [match(x, y, d, 1, "M") for d in Direction] if m]
 
 
 # Keep only those which are futher followed by the correct characters.
-xs = [m for m in [match(x, y, d, 2, 'A') for x, y, d in xs] if m]
-xs = [m for m in [match(x, y, d, 3, 'S') for x, y, d in xs] if m]
+xs = [m for m in [match(x, y, d, 2, "A") for x, y, d in xs] if m]
+xs = [m for m in [match(x, y, d, 3, "S") for x, y, d in xs] if m]
 
 print(len(xs))
 
@@ -55,11 +55,11 @@ diagonals = [
 _as = []
 for y, line in enumerate(input):
     for x, char in enumerate(line):
-        if char == 'A':
-            _as += [m for m in [match(x, y, d, 1, 'M') for d in diagonals] if m]
+        if char == "A":
+            _as += [m for m in [match(x, y, d, 1, "M") for d in diagonals] if m]
 
 # Keep only those which have an "S" in the opposite direction.
-_as = [m for m in [match(x, y, d, -1, 'S') for x, y, d in _as] if m]
+_as = [m for m in [match(x, y, d, -1, "S") for x, y, d in _as] if m]
 
 # If the same "A" matches twice, it is the center of an X-MAS.
 tracker = set()
