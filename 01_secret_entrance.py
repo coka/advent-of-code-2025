@@ -26,7 +26,7 @@ class Dial:
         return self.position
 
 
-with open("input.txt") as f:
+with open("input/01.txt") as f:
     dial = Dial()
     zero_lands = 0
     for line in f:

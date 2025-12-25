@@ -8,7 +8,7 @@ def parse(input: str) -> Iterable[Iterable[int]]:
     ]
 
 
-with open("02.txt") as f:
+with open("input/02.txt") as f:
     ranges = parse(f.read().strip())
 
 answer = 0
